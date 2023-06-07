@@ -65,12 +65,14 @@ public class UseLocatorsTests {
     public  void findElementByXpath() {
         // xpath - //*[@attr='value']
 
+        // driver.findElement(By.id("city"));
         driver.findElement(By.xpath("//*[@id='city']"));
 
+        // driver.findElement(By.className("navigation-link")
         driver.findElement(By.xpath("//*[@class='navigation-link']"));
 
         // text -> //*[contains(.,'text')]
-        driver.findElement(By.xpath("//*[contains(.,'Find your car')]"));
+        driver.findElement(By.xpath("//*[contains(.,'Find your car now!')]"));
 
     }
 
