@@ -29,10 +29,8 @@ public class TableTest {
     public void tableTests() {
         List<WebElement> elements = driver.findElements(By.cssSelector("table"));
         System.out.println(elements.size());
-    }
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 
+        WebElement element = driver.findElement(By.cssSelector("tr:nth-child(7) td:nth-child(3)"));
+        System.out.println(element.getText());
+    }
 }
