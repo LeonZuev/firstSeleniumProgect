@@ -3,6 +3,7 @@ package com.ait.qa24;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,7 @@ public class UseLocatorsTests {
         // id (BEST STRATEGY)
         driver.findElement(By.id("city"));
 
-        // classname
+        // className
         driver.findElement(By.className("navigation-link"));
 
         // name By.name
@@ -62,19 +63,21 @@ public class UseLocatorsTests {
     }
 
     @Test
-    public  void findElementByXpath() {
+    public void findElementByXpath() {
         // xpath - //*[@attr='value']
 
+        //xpath - //*[@id='city']
         // driver.findElement(By.id("city"));
         driver.findElement(By.xpath("//*[@id='city']"));
 
-        // driver.findElement(By.className("navigation-link")
+        // driver.findElement(By.className("navigation-link"));
         driver.findElement(By.xpath("//*[@class='navigation-link']"));
 
-        // text -> //*[contains(.,'text')]
+        //text -> //*[contains(.,'text')]
         driver.findElement(By.xpath("//*[contains(.,'Find your car now!')]"));
-
     }
-
-
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 }
