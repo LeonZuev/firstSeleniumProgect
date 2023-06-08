@@ -33,4 +33,9 @@ public class TableTest {
         WebElement element = driver.findElement(By.cssSelector("tr:nth-child(7) td:nth-child(3)"));
         System.out.println(element.getText());
     }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 }
